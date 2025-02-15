@@ -1,394 +1,522 @@
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matías</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        #particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1; /* Particles stay in the background */
-}
-        * {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        #typed-text {
-            border-right: 2px solid transparent;
-            padding-right: 4px;
-            display: inline-block;
-        }
-
-        @keyframes blink-caret {
-            from, to {
-                border-color: transparent
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Matías</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+            #particles-js {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                z-index: -1; /* Particles stay in the background */
             }
-            50% {
-                border-color: #FF6B1A
+
+            * {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
-        }
 
-        .typing-active {
-            animation: blink-caret 0.75s step-end infinite;
-        }
+            #typed-text {
+                border-right: 2px solid transparent;
+                padding-right: 4px;
+                display: inline-block;
+            }
 
-        :root {
-            --gradient-1: #820909; /* Crimson */
-            --gradient-2: #FF6B1A; /* Vibrant orange */
-            --gradient-3: #2A0A0A; /* Deep blood-black */
-            --bg-dark: #0F0A0A; /* Base dark */
-        }
+            @keyframes blink-caret {
+                from,
+                to {
+                    border-color: transparent;
+                }
+                50% {
+                    border-color: #820909;
+                }
+            }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            .typing-active {
+                animation: blink-caret 0.75s step-end infinite;
+            }
 
-        body {
-            font-family: 'SF Pro Text', -apple-system, sans-serif;
-            background: var(--bg-dark);
-            color: #fff;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+            :root {
+                --gradient-1: #820909; /* Crimson */
+                --gradient-2: #ff6b1a; /* Vibrant orange */
+                --gradient-3: #2a0a0a; /* Deep blood-black */
+                --bg-dark: #0f0a0a; /* Base dark */
+            }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        .hero {
-            text-align: center;
-            margin: 4rem 0;
-            position: relative;
-        }
+            body {
+                font-family: "SF Pro Text", -apple-system, sans-serif;
+                background: var(--bg-dark);
+                color: #fff;
+                line-height: 1.7;
+                overflow-x: hidden;
+            }
 
-        .hero h1 {
-            font-size: 3rem;
-            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
 
-        .bio-text {
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #CCCCCC;
-            position: relative;
-            padding: 2rem;
-        }
+            .hero {
+                text-align: center;
+                margin: 4rem 0;
+                position: relative;
+            }
 
-        .highlight {
-            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
-            padding: 0 3px;
-        }
+            .hero h1 {
+                font-size: 3rem;
+                background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 1.5rem;
+                letter-spacing: -1px;
+            }
 
-        .personal-tag {
-            display: inline-block;
-            margin: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-        }
+            .bio-text {
+                max-width: 600px;
+                margin: 0 auto;
+                font-size: 1.1rem;
+                color: #cccccc;
+                position: relative;
+                padding: 2rem;
+            }
 
-        /* Grid Section */
-        .media-section {
-            margin: 4rem 0;
-        }
+            .highlight {
+                background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                font-weight: 600;
+                padding: 0 3px;
+            }
 
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            padding-left: 1rem;
-            border-left: 4px solid var(--gradient-2);
-        }
+            .personal-tag {
+                display: inline-block;
+                margin: 0.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 50px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.9rem;
+            }
 
-        .media-section {
-            margin: 3rem 0;
-        }
+            /* Grid Section */
+            .media-section {
+                margin: 4rem 0;
+            }
 
-        .media-grid {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 1.2rem;
-            padding: 1rem 0;
-            -ms-overflow-style: none; /* IE y Edge */
-            scrollbar-width: none; /* Firefox */
-        }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+                padding-left: 1rem;
+                border-left: 4px solid var(--gradient-2);
+            }
 
-        .media-grid::-webkit-scrollbar {
-            display: none;
-        }
+            .media-section {
+                margin: 3rem 0;
+            }
 
-        .media-card {
-            scroll-snap-align: start;
-            min-width: 280px;
-            width: 280px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            cursor: pointer;
-        }
+            .media-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1.2rem;
+                padding: 1rem 0;
+                -ms-overflow-style: none; /* IE y Edge */
+                scrollbar-width: none; /* Firefox */
+            }
 
-        .media-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
-        }
+            .media-grid::-webkit-scrollbar {
+                display: none;
+            }
 
-        .cover-image {
-            width: 100%;
-            height: 160px;
-            border-radius: 8px;
-            object-fit: cover;
-            margin-bottom: 0.8rem;
-            transition: transform 0.3s ease;
-        }
-        .highlight {
-            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
-            padding: 0 3px;
-        }
+            .media-card {
+                scroll-snap-align: start;
+                min-width: 280px;
+                width: 280px;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 12px;
+                padding: 1rem;
+                transition: all 0.3s ease;
+                position: relative;
+                cursor: pointer;
+            }
 
-        .bio-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin: 1.5rem 0;
-        }
+            .media-card:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.05);
+            }
 
-        /* Eliminar las comillas */
-        .bio-text p::before {
-            content: none;
-        }
+            .cover-image {
+                width: 100%;
+                height: 160px;
+                border-radius: 8px;
+                object-fit: cover;
+                margin-bottom: 0.8rem;
+                transition: transform 0.3s ease;
+            }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
+            .highlight {
+                background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                font-weight: 600;
+                padding: 0 3px;
+            }
 
-        .social-icon {
-            font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.6);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            padding: 0.5rem;
-        }
+            .bio-text p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin: 1.5rem 0;
+            }
 
-        .social-icon:hover {
-            color: transparent;
-            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            transform: translateY(-3px);
-        }
+            /* Eliminar las comillas */
+            .bio-text p::before {
+                content: none;
+            }
 
-        .social-icon::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .social-icon:hover::after {
-            transform: scaleX(1);
-        }
-
-        @media (max-width: 768px) {
             .social-icons {
-                gap: 1rem;
-                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                margin-top: 2.5rem;
             }
 
             .social-icon {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+                color: rgba(255, 255, 255, 0.6);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                padding: 0.5rem;
             }
-        }
 
-        .age-text {
-            font-size: 1.3rem !important; /* Force override */
-            font-weight: 700 !important;
-            color: #CCCCCC !important;
-            margin: -0.5rem 0 1.5rem !important;
-            letter-spacing: -0.5px;
-            display: block; /* Ensure it's treated as block element */
-        }
+            .social-icon:hover {
+                color: transparent;
+                background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                transform: translateY(-3px);
+            }
 
-        .container {
-            padding-bottom: 80px;
-        }
+            .social-icon::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-            position: relative;
-            display: inline-block;
-        }
+            .social-icon:hover::after {
+                transform: scaleX(1);
+            }
 
-        .hero h1::before {
-            content: "Matías";
-            visibility: hidden;
-            white-space: nowrap;
-        }
+            @media (max-width: 768px) {
+                .social-icons {
+                    gap: 1rem;
+                    margin-top: 2rem;
+                }
 
-        /* Updated typed-text styles with gradient */
-        #typed-text {
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            border-right: 2px solid transparent;
-            padding-right: 4px;
-            display: inline-block;
-        }
-
-        /* Keep existing typing animation styles */
-        .typing-active {
-            animation: blink-caret 0.75s step-end infinite;
-        }
-    </style>
-</head>
-<body>
-<div id="particles-js"></div>
-<div class="container">
-    <section class="hero">
-        <div class="bio-text">
-            <h1><span id="typed-text"> </span></h1>
-            <p id="age-display" class="age-text">
-                <noscript>20 años</noscript>
-            </p>
-            Ingeniero informático con adicción controlada a los tés premium<br>
-            Mi rutina perfecta: <br>
-            - Tres infusiones diarias de <span class="highlight">té verde y negro</span><br>
-            - Playlists que van de <span class="highlight">música tradicional</span> a
-            <span class="highlight">electrónica de Akihabara</span><br>
-            - Dosis equilibrada de <span class="highlight">animé</span> y
-            <span class="highlight">videojuegos</span>
-            </p>
-
-        </div>
-    </section>
-    <div class="social-icons">
-        <a href="https://discord.com/users/1056752380126957669" target="_blank" class="social-icon"
-           aria-label="Discord">
-            <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://open.spotify.com/user/puftlzz9vhpmaew5u7ly3o2r0?si=GJSJAXVMTHiR9SOJJKUxSA" target="_blank"
-           class="social-icon" aria-label="Spotify">
-            <i class="fab fa-spotify"></i>
-        </a>
-        <a href="https://ecologi.com/matias" target="_blank" class="social-icon" aria-label="Ecologi">
-            <i class="fas fa-leaf"></i>
-        </a>
-        <a href="mailto:matias@matiasdamian.com" target="_blank" class="social-icon" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
-
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const typedText = document.getElementById('typed-text');
-        const text = "Matías";
-        let index = 0;
-        const speed = 130;
-
-        function typeCharacter() {
-            if (index < text.length) {
-                typedText.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeCharacter, speed);
-
-                // Start cursor animation when typing begins
-                if (!typedText.classList.contains('typing-active')) {
-                    typedText.classList.add('typing-active');
+                .social-icon {
+                    font-size: 1.5rem;
                 }
             }
-        }
 
-        // Initialize with empty text
-        typedText.textContent = '';
+            .age-text {
+                font-size: 1.3rem !important; /* Force override */
+                font-weight: 700 !important;
+                color: #cccccc !important;
+                margin: -0.5rem 0 1.5rem !important;
+                letter-spacing: -0.5px;
+                display: block; /* Ensure it's treated as block element */
+            }
 
-        setTimeout(() => {
-            typeCharacter();
-        }, 500);
+            .container {
+                padding-bottom: 80px;
+            }
 
-    });
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+                letter-spacing: -1px;
+                position: relative;
+                display: inline-block;
+            }
 
-    // Personal tag hover effect
-    document.querySelectorAll('.personal-tag').forEach(tag => {
-        tag.addEventListener('mouseover', () => {
-            tag.style.transform = 'rotate(-2deg) scale(1.05)';
+            .hero h1::before {
+                content: "Matías";
+                visibility: hidden;
+                white-space: nowrap;
+            }
+
+            /* Updated typed-text styles with gradient */
+            #typed-text {
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                border-right: 2px solid transparent;
+                padding-right: 4px;
+                display: inline-block;
+            }
+
+            /* Keep existing typing animation styles */
+            .typing-active {
+                animation: blink-caret 0.75s step-end infinite;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .eco-link-container {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin: 1.5rem 0 0.5rem;
+                justify-content: center;
+            }
+
+            .eco-link-content {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                padding: 0.8rem 1.2rem;
+
+                border-radius: 50px;
+                transition: all 0.3s ease;
+            }
+
+            .eco-link-content:hover {
+                transform: translateY(-2px);
+            }
+
+            .tree-counter {
+                font-size: 1.4rem;
+                background: linear-gradient(45deg, #3bb984, #8bc34a);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                font-weight: 600;
+                min-width: 60px;
+                text-align: center;
+            }
+
+            .eco-link-label {
+                color: #7a7a7a;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+
+            .eco-link-container:hover .eco-link-label {
+            }
+
+            /* Ajustar espaciado de la biografía */
+            .hero {
+                margin: 4rem 0 2rem 0;
+            }
+
+            /* Reducir espacio entre elementos */
+            .social-icons {
+                margin-top: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <div class="container">
+            <section class="hero">
+                <div class="bio-text">
+                    <h1><span id="typed-text"> </span></h1>
+                    <p id="age-display" class="age-text">
+                        <noscript>20 años</noscript>
+                    </p>
+                    Ingeniero informático con adicción controlada a los tés premium<br />
+                    Mi rutina perfecta: <br />
+                    - Tres infusiones diarias de <span class="highlight">té verde y negro</span><br />
+                    - Playlists que van de <span class="highlight">música tradicional</span> a <span class="highlight">electrónica de Akihabara</span><br />
+                    - Dosis equilibrada de <span class="highlight">animé</span> y
+                    <span class="highlight">videojuegos</span>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            // Counter animation
+                            const treeCounter = document.querySelector(".metric-value");
+                            const target = parseInt(treeCounter.dataset.count);
+                            let current = 0;
+
+                            const updateCounter = () => {
+                                if (current < target) {
+                                    current += Math.ceil(target / 50);
+                                    treeCounter.textContent = Math.min(current, target);
+                                    requestAnimationFrame(updateCounter);
+                                }
+                            };
+
+                            setTimeout(() => requestAnimationFrame(updateCounter), 500);
+
+                            // Particle animation
+                            setInterval(() => {
+                                const particle = document.createElement("div");
+                                particle.className = "particle";
+                                particle.style.cssText = `
+            left: ${Math.random() * 80 + 10}%;
+            width: ${Math.random() * 2 + 2}px;
+            height: ${Math.random() * 2 + 2}px;
+        `;
+                                document.querySelector(".metric-icon").appendChild(particle);
+
+                                anime({
+                                    targets: particle,
+                                    opacity: [0.8, 0],
+                                    translateY: [-15, 0],
+                                    translateX: () => anime.random(-5, 5),
+                                    duration: 1000,
+                                    easing: "easeOutExpo",
+                                    complete: () => particle.remove(),
+                                });
+                            }, 1200);
+                        });
+                    </script>
+                </div>
+            </section>
+            <div class="social-icons">
+                <a href="https://discord.com/users/1056752380126957669" target="_blank" class="social-icon" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://open.spotify.com/user/puftlzz9vhpmaew5u7ly3o2r0?si=GJSJAXVMTHiR9SOJJKUxSA" target="_blank" class="social-icon" aria-label="Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <a href="https://ecologi.com/matias" target="_blank" class="social-icon" aria-label="Ecologi">
+                    <i class="fas fa-leaf"></i>
+                </a>
+                <a href="mailto:matias@matiasdamian.com" target="_blank" class="social-icon" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="eco-link-container">
+                <a href="https://ecologi.com/matias" target="_blank" class="eco-link">
+                    <div class="eco-link-content">
+                        <i class="fas fa-tree" style="color: #3bb984; font-size: 1.4rem;"></i>
+                        <span class="tree-counter" data-count="35733">0</span>
+                        <div class="eco-footer">
+                            <span class="eco-link-label">Árboles Plantados en Ecologi&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </body>
+    <script src="/particles.min.js"></script>
+    <script type="text/javascript">
+        /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+        particlesJS.load("particles-js", "/particles.json", function () {
+            console.log("callback - particles.js config loaded");
+        });
+    </script>
+    <script>
+        // Animación del contador optimizada
+        document.addEventListener("DOMContentLoaded", () => {
+            const counter = document.querySelector(".tree-counter");
+            const target = parseInt(counter.dataset.count);
+            let current = 0;
+
+            // Precalcular ancho
+            counter.textContent = target;
+            const fixedWidth = counter.offsetWidth;
+            counter.style.minWidth = `${fixedWidth}px`;
+            counter.textContent = "0";
+
+            const animateCounter = () => {
+                if (current < target) {
+                    current = Math.min(current + Math.ceil(target / 40), target);
+                    counter.textContent = current;
+                    requestAnimationFrame(animateCounter);
+                }
+            };
+            requestAnimationFrame(animateCounter);
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const typedText = document.getElementById("typed-text");
+            const text = "Matías";
+            let index = 0;
+            const speed = 130;
+
+            function typeCharacter() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeCharacter, speed);
+
+                    // Start cursor animation when typing begins
+                    if (!typedText.classList.contains("typing-active")) {
+                        typedText.classList.add("typing-active");
+                    }
+                }
+            }
+
+            // Initialize with empty text
+            typedText.textContent = "";
+
+            setTimeout(() => {
+                typeCharacter();
+            }, 500);
         });
 
-        tag.addEventListener('mouseout', () => {
-            tag.style.transform = 'none';
+        // Personal tag hover effect
+        document.querySelectorAll(".personal-tag").forEach((tag) => {
+            tag.addEventListener("mouseover", () => {
+                tag.style.transform = "rotate(-2deg) scale(1.05)";
+            });
+
+            tag.addEventListener("mouseout", () => {
+                tag.style.transform = "none";
+            });
         });
-    });
-</script>
-<script>
-    function calculateAge() {
-        const birthYear = 2004;
-        const birthMonth = 7; // August (0-indexed: 0=January, 7=August)
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        const currentMonth = currentDate.getMonth();
+    </script>
+    <script>
+        function calculateAge() {
+            const birthYear = 2004;
+            const birthMonth = 7; // August (0-indexed: 0=January, 7=August)
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth();
 
-        let age = currentYear - birthYear;
+            let age = currentYear - birthYear;
 
-        // Subtract 1 if birthday hasn't occurred yet this year
-        if (currentMonth < birthMonth) {
-            age--;
+            // Subtract 1 if birthday hasn't occurred yet this year
+            if (currentMonth < birthMonth) {
+                age--;
+            }
+
+            return age;
         }
 
-        return age;
-    }
-
-    // Update age display
-    document.getElementById('age-display').textContent = `${calculateAge()} años`;
-</script>
-<script src="/particles.min.js"></script>
-<script type="text/javascript">/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', '/particles.json', function () {
-    console.log('callback - particles.js config loaded');
-});</script>
-</body>
-
+        // Update age display
+        document.getElementById("age-display").textContent = `${calculateAge()} años`;
+    </script>
 </html>
