@@ -30,7 +30,7 @@
       "random": false,
       "anim": {
         "enable": false,
-        "speed": 0.5,
+        "speed": 0.2,
         "opacity_min": 0.1,
         "sync": false
       }
