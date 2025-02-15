@@ -329,6 +329,7 @@
     </style>
 </head>
 <body>
+<div id="particles-js"></div>
 <div class="container">
     <section class="hero">
         <div class="bio-text">
@@ -344,7 +345,7 @@
             - Dosis equilibrada de <span class="highlight">animé</span> y
             <span class="highlight">videojuegos</span>
             </p>
-      
+
         </div>
     </section>
     <div class="social-icons">
@@ -427,6 +428,11 @@
     // Update age display
     document.getElementById('age-display').textContent = `${calculateAge()} años`;
 </script>
+<script type="text/javascript">/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'assets/particles.json', function () {
+    console.log('callback - particles.js config loaded');
+});</script>
+<script src="particles.js"></script>
 </body>
 
 </html>
