@@ -31,7 +31,7 @@
     }
 
     50% {
-        border-color: #820909;
+        border-color: #00308F;
     }
 }
 
@@ -40,14 +40,11 @@
 }
 
 :root {
-    --gradient-1: #820909;
-    /* Crimson */
-    --gradient-2: #ff6b1a;
-    /* Vibrant orange */
-    --gradient-3: #2a0a0a;
-    /* Deep blood-black */
-    --bg-dark: #0f0a0a;
-    /* Base dark */
+    --gradient-1: #0A1A2F;
+    --gradient-2: #0066FF;
+    --gradient-3: #00308F;
+    --gradient-4: #00C2FF;
+    --bg-dark: #0F0A0A;
 }
 
 * {
