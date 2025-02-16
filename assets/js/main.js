@@ -76,3 +76,42 @@
 
   // Update age display
   document.getElementById("age-display").textContent = `${calculateAge()} años`;
+
+ document.addEventListener("DOMContentLoaded", () => {
+     // Counter animation
+     const treeCounter = document.querySelector(".metric-value");
+     const target = parseInt(treeCounter.dataset.count);
+     let current = 0;
+
+     const updateCounter = () => {
+         if (current < target) {
+             current += Math.ceil(target / 50);
+             treeCounter.textContent = Math.min(current, target);
+             requestAnimationFrame(updateCounter);
+         }
+     };
+
+     setTimeout(() => requestAnimationFrame(updateCounter), 500);
+
+     // Particle animation
+     setInterval(() => {
+         const particle = document.createElement("div");
+         particle.className = "particle";
+         particle.style.cssText = `
+            left: ${Math.random() * 80 + 10}%;
+            width: ${Math.random() * 2 + 2}px;
+            height: ${Math.random() * 2 + 2}px;
+        `;
+         document.querySelector(".metric-icon").appendChild(particle);
+
+         anime({
+             targets: particle,
+             opacity: [0.8, 0],
+             translateY: [-15, 0],
+             translateX: () => anime.random(-5, 5),
+             duration: 1000,
+             easing: "easeOutExpo",
+             complete: () => particle.remove(),
+         });
+     }, 1200);
+ });
