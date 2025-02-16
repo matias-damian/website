@@ -21,47 +21,6 @@
                     - Playlists que van de <span class="highlight">música tradicional</span> a <span class="highlight">electrónica de Akihabara</span><br />
                     - Dosis equilibrada de <span class="highlight">animé</span> y
                     <span class="highlight">videojuegos</span>
-
-                    <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                            // Counter animation
-                            const treeCounter = document.querySelector(".metric-value");
-                            const target = parseInt(treeCounter.dataset.count);
-                            let current = 0;
-
-                            const updateCounter = () => {
-                                if (current < target) {
-                                    current += Math.ceil(target / 50);
-                                    treeCounter.textContent = Math.min(current, target);
-                                    requestAnimationFrame(updateCounter);
-                                }
-                            };
-
-                            setTimeout(() => requestAnimationFrame(updateCounter), 500);
-
-                            // Particle animation
-                            setInterval(() => {
-                                const particle = document.createElement("div");
-                                particle.className = "particle";
-                                particle.style.cssText = `
-            left: ${Math.random() * 80 + 10}%;
-            width: ${Math.random() * 2 + 2}px;
-            height: ${Math.random() * 2 + 2}px;
-        `;
-                                document.querySelector(".metric-icon").appendChild(particle);
-
-                                anime({
-                                    targets: particle,
-                                    opacity: [0.8, 0],
-                                    translateY: [-15, 0],
-                                    translateX: () => anime.random(-5, 5),
-                                    duration: 1000,
-                                    easing: "easeOutExpo",
-                                    complete: () => particle.remove(),
-                                });
-                            }, 1200);
-                        });
-                    </script>
                 </div>
             </section>
             <div class="social-icons">
