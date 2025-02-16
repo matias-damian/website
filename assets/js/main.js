@@ -79,10 +79,8 @@
 
  document.addEventListener("DOMContentLoaded", () => {
      // Counter animation
-     const treeCounter = document.querySelector(".metric-value");
-     if(treeCounter === null){
-       return;
-     }
+     const treeCounter = document.querySelector(".tree-counter");
+     
      const target = parseInt(treeCounter.dataset.count);
      let current = 0;
 
