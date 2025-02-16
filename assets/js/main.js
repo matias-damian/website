@@ -93,26 +93,4 @@
      };
 
      setTimeout(() => requestAnimationFrame(updateCounter), 500);
-
-     // Particle animation
-     setInterval(() => {
-         const particle = document.createElement("div");
-         particle.className = "particle";
-         particle.style.cssText = `
-            left: ${Math.random() * 80 + 10}%;
-            width: ${Math.random() * 2 + 2}px;
-            height: ${Math.random() * 2 + 2}px;
-        `;
-         document.querySelector(".metric-icon").appendChild(particle);
-
-         anime({
-             targets: particle,
-             opacity: [0.8, 0],
-             translateY: [-15, 0],
-             translateX: () => anime.random(-5, 5),
-             duration: 1000,
-             easing: "easeOutExpo",
-             complete: () => particle.remove(),
-         });
-     }, 1200);
  });
