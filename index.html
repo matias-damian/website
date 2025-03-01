@@ -63,6 +63,14 @@
             animation: textAppear 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s forwards;
         }
 
+        .highlight {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -199,12 +207,9 @@
         </header>
 
         <section class="bio-section">
-            <p>Mi vida giro en torno a la curiosidad y la creatividad. Desde pequeño, la tecnología ha sido una extensión de mi imaginación, llevándome a explorar mundos digitales, aprender sobre programación y descubrir el potencial ilimitado de la programación.</p>
-            <p>Pero la tecnología no es mi única obsesión. La música tiene un lugar especial en mi vida, me encanta descubrir música que transmita una sensación única. También disfruto los videojuegos que desafían la mente, ya sea a través de estrategia o exploración.
-</p>
-          <p>
-            Ah, y el té... No hay un día sin él. Siempre hay una taza a mi lado, sin importar la hora o el lugar.
-          </p>
+            <p>Mi vida gira en torno a la curiosidad y creatividad. Desde pequeño, la <span class="highlight">tecnología</span> ha sido una puerta a nuevos mundos, llevándome a explorar el mundo digital, aprender sobre programación y descubrir el potencial infinito del internet.</p>
+            <p>Pero la tecnología no es mi única obsesión. La  <span class="highlight">música</span> tiene un lugar especial en mi vida, me encanta descubrir música que transmita una sensación única. También disfruto los <span class="highlight">videojuegos</span> que desafían la mente, ya sea a través de estrategia o exploración.</p>
+            <p>Ah, y el <span class="highlight">té</span>... No hay un día sin él. Siempre hay una taza a mi lado, sin importar la hora o el lugar.</p>
         </section>
 
         <div class="social-links">
