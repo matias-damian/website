@@ -1,228 +1,265 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#ffffff">
-    <title>Matias</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #0071E3 0%, #2997FF 100%);
-            --text-primary: #1D1D1F;
-            --text-secondary: #86868B;
-            --accent-blue: #0071E3;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#ffffff" />
+        <title>Matias</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <style>
+            :root {
+                --primary-gradient: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+                --text-primary: #1d1d1f;
+                --text-secondary: #86868b;
+                --accent-blue: #0071e3;
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+            }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            background: #FFFFFF;
-            color: var(--text-primary);
-            line-height: 1.618;
-            overflow-x: hidden;
-        }
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                background: #ffffff;
+                color: var(--text-primary);
+                line-height: 1.618;
+                overflow-x: hidden;
+            }
 
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 8rem 2rem 6rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 5rem;
-            font-weight: 700;
-            letter-spacing: -0.045em;
-            line-height: 1.07;
-            margin: 0 0 1.2rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .title {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: var(--text-secondary);
-            letter-spacing: 0.025em;
-            margin: 1.5rem 0 3rem;
-            animation: titleFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
-        }
-
-        .bio-section {
-            max-width: 780px;
-            margin: 4rem auto;
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            line-height: 1.8;
-            opacity: 0;
-            animation: textAppear 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s forwards;
-        }
-
-        .highlight {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: bold;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            margin: 6rem auto 0;
-            opacity: 0;
-            animation: socialAppear 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.6s forwards;
-        }
-
-        .social-link {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.42s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .social-link::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--primary-gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-link i {
-            font-size: 1.8rem;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-4px) scale(1.05);
-        }
-
-        .social-link:hover::before {
-            opacity: 1;
-        }
-
-        .social-link:hover i {
-            color: #FFFFFF;
-        }
-
-        @keyframes titleFade {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes textAppear {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes socialAppear {
-            0% { opacity: 0; transform: scale(0.96); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        @media (max-width: 832px) {
             .container {
-                padding: 6rem 1.8rem 4rem;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 8rem 2rem 6rem;
+                text-align: center;
             }
 
             h1 {
-                font-size: 3.8rem;
+                font-size: 5rem;
+                font-weight: 700;
+                letter-spacing: -0.045em;
+                line-height: 1.07;
+                margin: 0 0 1.2rem;
+                background: var(--primary-gradient);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
             }
 
             .title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+                font-weight: 300;
+                color: var(--text-secondary);
+                letter-spacing: 0.025em;
+                margin: 1.5rem 0 3rem;
+                animation: titleFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
             }
 
             .bio-section {
-                font-size: 1.3rem;
-                margin: 3rem auto;
-                padding: 0 1rem;
-            }
-
-            .social-links {
-                gap: 2rem;
-                margin: 4rem auto 0;
-            }
-
-            .social-link {
-                width: 56px;
-                height: 56px;
-            }
-
-            .social-link i {
-                font-size: 1.6rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-
-            .title {
-                font-size: 1.3rem;
-            }
-
-            .bio-section {
-                font-size: 1.15rem;
-            }
-
-            .social-links {
-                gap: 1.5rem;
-            }
-
-            .social-link {
-                width: 52px;
-                height: 52px;
-            }
-
-            .social-link i {
+                max-width: 780px;
+                margin: 4rem auto;
                 font-size: 1.4rem;
+                color: var(--text-primary);
+                line-height: 1.8;
+                opacity: 0;
+                animation: textAppear 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s forwards;
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Matias</h1>
-            <div class="title">20 años</div>
-        </header>
 
-        <section class="bio-section">
-            <p>¡Hola! Soy Matias. Desde pequeño, la <span class="highlight">tecnología</span> siempre me ha fascinado, por eso decidí estudiar ingeniería en informática. Me apasiona el mundo digital y todo lo que tiene que ver con internet.</p>
-            <p>Pero la tecnología no es mi única obsesión. La  <span class="highlight">música</span> tiene un lugar especial en mi vida, me encanta descubrir música que transmita una sensación única. También disfruto los <span class="highlight">videojuegos</span> que desafían la mente, ya sea a través de estrategia o exploración.</p>
-            <p>Ah, y el <span class="highlight">té</span>... No hay un día sin él. Siempre hay una taza a mi lado, sin importar la hora o el lugar.</p>
-        </section>
+            .highlight {
+                background: var(--primary-gradient);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                font-weight: bold;
+            }
 
-        <div class="social-links">
-            <a href="mailto:matias@matiasdamian.com" class="social-link" target="_blank">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://github.com/matias-damian" class="social-link" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://discord.com/users/1056752380126957669" class="social-link" target="_blank">
-                <i class="fa-brands fa-discord"></i>
-            </a>
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 2.5rem;
+                margin: 6rem auto 0;
+                opacity: 0;
+                animation: socialAppear 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.6s forwards;
+            }
+
+            .social-link {
+                width: 64px;
+                height: 64px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.42s cubic-bezier(0.165, 0.84, 0.44, 1);
+                position: relative;
+                overflow: hidden;
+                text-decoration: none;
+                color: var(--text-primary);
+            }
+
+            .social-link::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: var(--primary-gradient);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .social-link i {
+                font-size: 1.8rem;
+                position: relative;
+                z-index: 1;
+                transition: color 0.3s ease;
+            }
+
+            .social-link:hover {
+                transform: translateY(-4px) scale(1.05);
+            }
+
+            .social-link:hover::before {
+                opacity: 1;
+            }
+
+            .social-link:hover i {
+                color: #ffffff;
+            }
+
+            @keyframes titleFade {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes textAppear {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes socialAppear {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.96);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            @media (max-width: 832px) {
+                .container {
+                    padding: 6rem 1.8rem 4rem;
+                }
+
+                h1 {
+                    font-size: 3.8rem;
+                }
+
+                .title {
+                    font-size: 1.5rem;
+                }
+
+                .bio-section {
+                    font-size: 1.3rem;
+                    margin: 3rem auto;
+                    padding: 0 1rem;
+                }
+
+                .social-links {
+                    gap: 2rem;
+                    margin: 4rem auto 0;
+                }
+
+                .social-link {
+                    width: 56px;
+                    height: 56px;
+                }
+
+                .social-link i {
+                    font-size: 1.6rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 2.8rem;
+                }
+
+                .title {
+                    font-size: 1.3rem;
+                }
+
+                .bio-section {
+                    font-size: 1.15rem;
+                }
+
+                .social-links {
+                    gap: 1.5rem;
+                }
+
+                .social-link {
+                    width: 52px;
+                    height: 52px;
+                }
+
+                .social-link i {
+                    font-size: 1.4rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Matias</h1>
+                <div class="title">20 años</div>
+            </header>
+
+            <section class="bio-section">
+                <p>
+                    ¡Hola! Soy Matías. Desde que era niño, siempre me ha gustado la <span class="highlight">tecnología</span>, y por eso decidí estudiar <span class="highlight">ingeniería en informática</span>. Todo lo que tiene que ver con
+                    el mundo digital e internet me apasiona.
+                </p>
+                <p>
+                    Pero no solo soy un amante de la tecnología. La música tiene un lugar muy especial en mi vida, y me encanta descubrir esas melodías que me hacen sentir algo único. También los
+                    <span class="highlight">videojuegos</span> que desafíen la mente, ya sea por estrategia o exploración.
+                </p>
+                <p>Y no puede faltar el <span class="highlight">té</span>… Siempre tengo una taza cerca, sin importar la hora ni el lugar.</p>
+            </section>
+
+            <div class="social-links">
+                <a href="mailto:matias@matiasdamian.com" class="social-link" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/matias-damian" class="social-link" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://discord.com/users/1056752380126957669" class="social-link" target="_blank">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
+    <footer>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function () {
+                document.body.addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                });
+            });
+        </script>
+    </footer>
 </html>
