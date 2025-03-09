@@ -523,12 +523,21 @@
         }
 
         // Efecto cerrar ventana (rojo)
-        redLight.addEventListener('click', () => {
-          macWindow.classList.add('window-closed');
-          setTimeout(() => {
-            window.open('', '_self').close();
-          }, 300);
-        });
+        redLight.addEventListener('click', (e) => {
+          e.preventDefault();
+          const confirmarCerrar = confirm("¿Estás seguro de que quieres cerrar la ventana?");
+      
+          if(confirmarCerrar) {
+            macWindow.classList.add('window-closed');
+            setTimeout(() => {
+              try {
+                window.close();
+              } catch (error) {
+                 window.location.href = 'about:blank';
+              }
+            }, 300);
+          }
+      });
 
         // Efecto minimizar (amarillo)
         yellowLight.addEventListener('click', () => {
