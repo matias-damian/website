@@ -510,7 +510,7 @@
         <svg class="ev-lock" viewBox="0 0 16 16" fill="#126b54">
           <path d="M8 1a4 4 0 0 0-4 4v2H3v7h10V7h-1V5a4 4 0 0 0-4-4zm3 6H5V5a3 3 0 1 1 6 0v2z"/>
         </svg>
-        MATIAS DAMIAN T. DEL SOLAR
+        Matias Damian T. del Solar
       </div>
     </div>
   </div>
@@ -589,18 +589,14 @@
         // Efecto cerrar ventana (rojo)
         redLight.addEventListener('click', (e) => {
           e.preventDefault();
-          const confirmarCerrar = confirm("¿Estás seguro de que quieres cerrar la ventana?");
-      
-          if(confirmarCerrar) {
-            macWindow.classList.add('window-closed');
+           macWindow.classList.add('window-closed');
             setTimeout(() => {
               try {
                 window.close();
               } catch (error) {
                  window.location.href = 'about:blank';
               }
-            }, 300);
-          }
+          }, 300);
       });
 
         // Efecto minimizar (amarillo)
