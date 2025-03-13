@@ -15,7 +15,7 @@
       --window-border: #e5e5e5;
       user-select: none;
       -webkit-user-select: none;
-      -moz-user-select: none;
+      -moz-user-select: none;s
       -ms-user-select: none;
     }
 
@@ -29,6 +29,9 @@
       line-height: 1.618;
       overflow: hidden;
       min-height: 100vh;
+      padding: 1rem;
+      padding-left: calc(1rem + env(safe-area-inset-left));
+      padding-right: calc(1rem + env(safe-area-inset-right));
     }
 
     .macos-window {
@@ -61,11 +64,11 @@
     }
 
     .traffic-lights {
-      position: sticky;
-      top: 18px;
-      left: 18px;
+      position: absolute;
+      top: 12px; /* Adjusted for better mobile spacing */
+  left: 12px;
+  gap: 10px; 
       display: flex;
-      gap: 8px;
       z-index: 10;
       margin: 0 0 12px 0;
       background: transparent;
@@ -82,6 +85,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      
     }
 
     .traffic-light::before {
@@ -306,6 +310,15 @@
       .ecologi-text-sub {
         font-size: 0.8rem;
       }
+  .traffic-lights {
+    top: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+  .traffic-light {
+    width: 14px;
+    height: 14px;
+  }
     }
 
     @media (max-width: 832px) {
@@ -314,7 +327,8 @@
       }
 
       .macos-window {
-        width: calc(100% - 2rem);
+         max-height: 90vh; /* Prevent overflow */
+  width: calc(100% - 2rem);
         max-width: none;
         margin: 0;
       }
@@ -367,6 +381,13 @@
       .ecologi-box {
         padding: 0.6rem 1rem;
       }
+      body {
+    padding: 0.5rem;
+  }
+      .macos-window {
+    width: calc(100% - 1rem);
+    max-height: 95vh; 
+  }
     }
 
     @keyframes titleFade {
@@ -465,54 +486,48 @@
 				</header>
 				<section class="bio-section">
 					<p>
-          ¡Hola! Soy Matías. Desde que era pequeño, siempre me ha gustado la 
-						<span class="highlight">tecnología</span>,
-          y por eso decidí estudiar ingeniería en informática. Todo lo que tiene que ver con
-          internet me apasiona.
-        
-					</p>
-					<p>
-          La 
-						<span class="highlight">música</span> tiene un lugar especial en mi vida, y siempre estoy buscando
-          canciones que me sorprendan.
-          De vez en cuando juego, pero me atraen más los 
-						<span class="highlight">juegos</span> de estrategia y
-          exploración.
-        
-					</p>
-					<p>Ah... y me encanta el 
-						<span class="highlight">té</span>.
-					</p>
-					<div class="ecologi-container">
-						<div class="ecologi-box">
-							<a href="https://ecologi.com/matias" class="ecologi-link" target="_blank">
-								<div class="ecologi-icon">
-									<i class="fas fa-seedling"></i>
-								</div>
-								<div class="ecologi-text">
-									<div class="ecologi-text-main">Ayudo a reforestar bosques en Mozambique y Madagascar</div>
-									<div class="ecologi-text-sub">Ver mi perfil de Ecologi</div>
-								</div>
-							</a>
+						<p>
+    Hello, and welcome to my little corner of the internet. I’m Matias.
+    I'm a lifelong 
+							<span class="highlight">tech enthusiast</span>, which naturally led me to studying 
+							<span class="highlight">computer science</span>.
+						</p>
+						<p>
+							<span class="highlight">Music</span> is a big part of my life; I listen to it every day and love discovering new songs that are remarkably good.
+						</p>
+						<p>I also enjoy videogames. And one thing I can never go without? 
+							<span class="highlight">A good cup of tea</span>.
+						</p>
+						<div class="ecologi-container">
+							<div class="ecologi-box">
+								<a href="https://ecologi.com/matias" class="ecologi-link" target="_blank">
+									<div class="ecologi-icon">
+										<i class="fas fa-seedling"></i>
+									</div>
+									<div class="ecologi-text">
+										<div class="ecologi-text-main">I contribute to reforestation projects in Mozambique and Madagascar.</div>
+										<div class="ecologi-text-sub"> View my Ecologi profile</div>
+									</div>
+								</a>
+							</div>
 						</div>
-					</div>
-				</section>
-				<div class="social-links">
-					<a href="https://github.com/matias-damian" class="social-link" target="_blank">
-						<i class="fa-brands fa-github"></i>
-					</a>
-					<a href="https://discord.com/users/1056752380126957669" class="social-link" target="_blank">
-						<i class="fa-brands fa-discord"></i>
-					</a>
-					<a href="https://open.spotify.com/user/puftlzz9vhpmaew5u7ly3o2r0?si=aafb0612015e4432" class="social-link"
+					</section>
+					<div class="social-links">
+						<a href="https://github.com/matias-damian" class="social-link" target="_blank">
+							<i class="fa-brands fa-github"></i>
+						</a>
+						<a href="https://discord.com/users/1056752380126957669" class="social-link" target="_blank">
+							<i class="fa-brands fa-discord"></i>
+						</a>
+						<a href="https://open.spotify.com/user/puftlzz9vhpmaew5u7ly3o2r0?si=aafb0612015e4432" class="social-link"
           target="_blank">
-						<i class="fa-brands fa-spotify"></i>
-					</a>
+							<i class="fa-brands fa-spotify"></i>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<footer>
-			<script type="text/javascript">
+			<footer>
+				<script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function () {
         document.body.addEventListener("contextmenu", function (e) {
           e.preventDefault();
@@ -578,6 +593,6 @@
         });
         
       </script>
-		</footer>
-	</body>
-</html>
+			</footer>
+		</body>
+	</html>
