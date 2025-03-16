@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta name="theme-color" content="#ffffff" />
+		<title>Matias</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+      --text-primary: #1d1d1f;
+      --text-secondary: #86868b;
+      --accent-blue: #0071e3;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: #f5f5f7;
+      color: var(--text-primary);
+      line-height: 1.618;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1.07;
+      margin: 0 0 1.2rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      letter-spacing: 0.025em;
+      margin: 1.5rem 0 3rem;
+      animation: titleFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    }
+
+    .bio-section {
+      max-width: 680px;
+      margin: 2rem auto;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      line-height: 1.8;
+      opacity: 0;
+      animation: textAppear 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s forwards;
+      padding: 0 1.5rem;
+    }
+
+    .highlight {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 600;
+      
+    }
+    
+    .icon-gradient {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-right: 0.3em;
+  vertical-align: middle;
+}
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin: 4rem auto 2rem;
+      opacity: 0;
+      animation: socialAppear 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.6s forwards;
+      padding: 0 1rem;
+    }
+
+    .social-link {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.42s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text-primary);
+      background: rgba(0, 113, 227, 0.08);
+      border: 1px solid rgba(134, 134, 139, 0.1);
+    }
+
+    .social-link::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--primary-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-link i {
+      font-size: 1.6rem;
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-4px) scale(1.05);
+      border-color: transparent;
+    }
+
+    .social-link:hover::before {
+      opacity: 1;
+    }
+
+    .social-link:hover i {
+      color: #ffffff;
+    }
+
+    .ecologi-container {
+      display: inline-flex;
+      margin: 2rem 0 0;
+      opacity: 0;
+      animation: textAppear 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s forwards;
+    }
+
+    .ecologi-box {
+      padding: 0.8rem 1.2rem;
+      border: 1px solid rgba(134, 134, 139, 0.1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.98);
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      backdrop-filter: blur(4px);
+    }
+
+    .ecologi-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .ecologi-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary-gradient);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .ecologi-text {
+      text-align: left;
+      line-height: 1.3;
+    }
+
+    .ecologi-text-main {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .ecologi-text-sub {
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 480px) {
+      .ecologi-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .ecologi-text-main {
+        font-size: 0.9rem;
+      }
+
+      .ecologi-text-sub {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 832px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .bio-section {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+      }
+
+      .social-links {
+        gap: 2rem;
+        margin: 3rem auto 2rem;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+      }
+
+      .social-link i {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .title {
+        font-size: 1.3rem;
+      }
+
+      .bio-section {
+        font-size: 1.1rem;
+      }
+
+      .social-links {
+        gap: 1.5rem;
+      }
+
+      .ecologi-box {
+        padding: 0.6rem 1rem;
+      }
+      body {
+        padding: 0.5rem;
+      }
+    }
+
+    @keyframes titleFade {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes textAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes socialAppear {
+      0% {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Matias</h1>
+				<div class="title">20 years old</div>
+			</header>
+			<section class="bio-section">
+			    <p>Hello and welcome to my website. I'm a <span class="highlight">Computer Engineering student</span> from LATAM.</p>
+    <p>I enjoy listening to music every day. I collect CDs and have a digital library.</p>
+    <p>I play games casually, mostly exploration and strategy.</p>
+    <p>And tea? Always. You’ll never find me without a cup nearby.</p>
+		<div class="ecologi-container">
+					<div class="ecologi-box">
+						<a href="https://ecologi.com/matias" class="ecologi-link" target="_blank">
+							<div class="ecologi-icon">
+								<i class="fas fa-seedling"></i>
+							</div>
+							<div class="ecologi-text">
+								<div class="ecologi-text-main">Helping restore forests in Mozambique and Madagascar</div>
+								<div class="ecologi-text-sub">View my Ecologi profile</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</section>
+			<div class="social-links">
+				<a href="https://github.com/matias-damian" class="social-link" target="_blank">
+					<i class="fa-brands fa-github"></i>
+				</a>
+				<a href="https://discord.com/users/1056752380126957669" class="social-link" target="_blank">
+					<i class="fa-brands fa-discord"></i>
+				</a>
+				<a href="https://open.spotify.com/user/puftlzz9vhpmaew5u7ly3o2r0?si=aafb0612015e4432" class="social-link" target="_blank">
+					<i class="fa-brands fa-spotify"></i>
+				</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+	</body>
+</html>
